@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
 
   def show
     the_id = params[:id]
-    product_by_id = Product.find_by(id: the_id)
-    render json: product_by_id.as_json
+    show_product = Product.find_by(id: the_id)
+    render json: show_product.as_json
   end
 
   def create
@@ -21,5 +21,16 @@ class ProductsController < ApplicationController
     )
     new_product.save
     render json: new_product.as_json
+  end
+
+  def update
+    the_id = params[:id]
+    update_product = Product.find_by(id: the_id)
+    update_product.name = params[:name]
+    update_product.price = params[:price]
+    update_product.img_url = params[:url]
+    update_product.description = params[:description]
+    update_product.save
+    render json: update_product.as_json
   end
 end
