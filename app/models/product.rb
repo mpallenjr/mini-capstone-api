@@ -1,8 +1,17 @@
 class Product < ApplicationRecord
 
-  def is_discounted?
-    price < 10
-  end
+  # validates :description, length: { in: 6..500 }
+  # validates :name, presence: true
+  # validates :price, numericality: { greater_than: 0 }
+  # validates :name, uniqueness: true
+
+def supplier
+  supplier = AddSupplier.find_by(id:supplier_id)
+end
+
+   def is_discounted?
+     price < 10
+   end
   
   def tax
     price * 0.09

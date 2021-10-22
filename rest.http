@@ -3,7 +3,7 @@ GET http://localhost:3000/products.json
 
 ###
 #SHOW
-GET http://localhost:3000/products/99.json
+GET http://localhost:3000/products/30.json
 
 ###
 #CREATE
@@ -14,7 +14,8 @@ content-type: application/json
 "name": "Mike",
 "price": 1000000,
 "url": "   ",
-"description": "here is the sescription"
+"description": "here is the sescription",
+"supplier_id": "1"
 }
 
 ###
