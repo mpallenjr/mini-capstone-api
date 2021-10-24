@@ -1,12 +1,12 @@
 class Product < ApplicationRecord
-
+belongs_to :supplier
   # validates :description, length: { in: 6..500 }
   # validates :name, presence: true
   # validates :price, numericality: { greater_than: 0 }
   # validates :name, uniqueness: true
 
 def supplier
-  supplier = AddSupplier.find_by(id:supplier_id)
+  supplier = Supplier.find_by(id:supplier_id)
 end
 
    def is_discounted?
