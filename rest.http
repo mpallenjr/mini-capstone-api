@@ -1,5 +1,7 @@
 #INDEX
 GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzUyOTIxNTF9.0MYq0fBNK4oi-gxHFaM3Fsr9OeSRNtqHWPpwW1ugX5g
+
 
 ###
 #SHOW
@@ -33,3 +35,24 @@ content-type: application/json
 ###
 #DELETE
 DELETE http://localhost:3000/products/99.json
+
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Test name",
+  "email": "test@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}

@@ -2,8 +2,15 @@ class ProductsController < ApplicationController
  
  
   def index
-    all_products = Product.all
-    render json: all_products.as_json
+    p "HERE IS THE CURRENT USER"
+    p current_user
+    p "THAT WAS THE CURRENT USER"
+    if current_user
+      all_products = Product.all
+      render json: all_products.as_json
+    else
+      render json: {message: "you must be logged in to use this page"}
+    end
   end
 
   def show
